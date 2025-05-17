@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 124 55% 34%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 26 35% 36%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 43 90% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 124 55% 34%;
+  --radius: 0.5rem;
+  --chart-1: 124 55% 34%;
+  --chart-2: 26 35% 36%;
+  --chart-3: 43 90% 50%;
+  --chart-4: 196 70% 50%;
+  --chart-5: 0 84.2% 60.2%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 124 55% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 26 35% 36%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 43 90% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 124 55% 45%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-bold;
+  }
+}
+
+.toggle-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.off {
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+.toggle-btn.on {
+  background-color: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+}
+
+.phase-indicator {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.phase-active {
+  background-color: hsl(var(--success));
+  color: hsl(var(--destructive-foreground));
+}
+
+.phase-inactive {
+  background-color: #ccc;
+  color: #666;
+}
+
+.feature-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.farmer-bg {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.login-register-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+/* Add success color */
+:root {
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+}
+
+.dark {
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+}
